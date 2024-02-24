@@ -1,0 +1,25 @@
+<!-- Allow the user to select a color theme -->
+<form action="" class="color-picker">
+  <fieldset>
+    <legend class="visually-hidden">Pick a theme</legend>
+    <label class="visually-hidden" for="light-theme">Light theme</label
+    ><input type="radio" name="theme" id="light-theme" />
+    <label class="visually-hidden" for="dark-theme">Dark theme</label
+    ><input type="radio" name="theme" id="dark-theme" checked />
+    <label class="visually-hidden" for="tom-theme">Tom theme</label
+    ><input type="radio" name="theme" id="tom-theme" />
+  </fieldset>
+</form>
+<!-- we have this script run as soon as the color picker is live -->
+<!-- to avoid a flash -->
+{{- with resources.Get "js/color-picker.js" }} {{- if eq hugo.Environment
+"development" }} {{- with . | js.Build }}
+<script src="{{ .RelPermalink }}"></script>
+{{- end }} {{- else }} {{- $opts := dict "minify" true }} {{- with . | js.Build
+$opts | fingerprint }}
+<script
+  src="{{ .RelPermalink }}"
+  integrity="{{- .Data.Integrity }}"
+  crossorigin="anonymous"
+></script>
+{{- end }} {{- end }} {{- end }}

@@ -7,6 +7,8 @@
     {{ partial "head.html" . }}
   </head>
   <body>
+    {{ partial "color-picker.html" . }}
+
     <header>{{ partial "header.html" . }}</header>
     <main>{{ block "main" . }}{{ end }}</main>
     <footer>{{ partial "footer.html" . }}</footer>
