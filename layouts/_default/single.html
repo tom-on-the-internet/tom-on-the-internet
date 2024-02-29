@@ -6,6 +6,7 @@
     $dateHuman := .Date | time.Format ":date_long" }}
     <time datetime="{{ $dateMachine }}"> {{ $dateHuman }}</time> — {{
     .ReadingTime }} minute read
+    <p>toc here?</p>
   </aside>
   {{ .Content}}
 </article>

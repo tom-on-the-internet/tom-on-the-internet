@@ -15,9 +15,7 @@ I'm sharing these for two reasons:
 1. I want to come back to this in a year or two and see if I've changed my mind.
 2. I hope others who agree with me stumble upon this blog and feel less alone.
 
-Also, I should quickly say that...
-
-<aside>Nothing I'm writing here is directed at anyone in particular. I'm not responding to the latest Twitter drama. These are general thoughts about what I read on Reddit, Twitter, Hacker News, etc.</aside>
+Also, I should quickly say that nothing I'm writing here is directed at anyone in particular. I'm not responding to the latest Twitter drama. These are general thoughts about what I read on Reddit, Twitter, Hacker News, etc.
 
 ## Single letter variable names are great
 
@@ -26,10 +24,10 @@ Let's start off light. I don't think single letter variable names are bad. I thi
 Look at the variable name in the map function.
 
 ```js
-// country
-const countryNames = countries.map((country) => country.name)
-// c
-const countryNames = countries.map((c) => c.name)
+// items
+items.map((item) => item.name)
+// i
+items.map((i) => i.name)
 ```
 
 A single letter variable name communicates that the life of the variable is short and that the contents of the variable are not surprising.
@@ -43,7 +41,7 @@ This is an example of a **bad** use of a single letter variable name:
 ```js
 // this is bad code
 
-const r = parseCountry(myCountry)
+const r = parseCountry(country)
 if (r.location.isValid()) {
   r.stamp(now())
 }
@@ -71,9 +69,7 @@ If an employee says that working more than 40 hours a week will cause them to bu
 
 It's also possible that employees will leave a company where work life balance is prioritized because the culture is not exciting. I can certainly imagine a younger version of myself feeling that way.
 
-<aside>This guy... I'm not sure what he's doing.</aside>
-
-![some guy](images/bike-guy.jpg)
+![some guy](images/bike-guy.jpg "This guy... I'm not sure what he's doing.")
 
 Consider a 23 year old software developer who has very few obligations outside of work. All they want to do is become a better software developer. Would working 60 hours weeks for a few years be bad for them, or would they look back on those years as foundational?
 
@@ -85,9 +81,7 @@ I want to reiterate that I, right now, am not interested in working weekends. Bu
 
 Speed has gotten a bad reputation over the past decade. "Move fast and break things", a slogan that used to be celebrated, is now commonly mocked. But I think we've swung too far in the opposite direction.
 
-<aside>This used to be celebrated.</aside>
-
-![Move fast and break things](images/move-fast.jpg)
+![Move fast and break things](images/move-fast.jpg "This used to be celebrated.")
 
 How long does it take you to...
 
@@ -118,7 +112,7 @@ I'm not saying we shouldn't plan, but planning is a necessary evil. Planning isn
 
 So much of what software developers seem to spend their time doing (or at least what they complain about having to do) does not provide value directly.
 
-![Agile midwit](images/agile-midwit.jpg)
+![Agile midwit](images/agile-midwit.jpg "caption")
 
 Here are a list of tasks that software developers spend their time on. I've **bolded** any task that directly provides value.
 
@@ -160,9 +154,7 @@ I was equally clueless about the difference between a terminal and a shell, or w
 
 I was OK with my tools, but I didn't know how they worked.
 
-<aside>I was like this monkey holding a camera backwards. But not as cute.</aside>
-
-![Monkey holding camera](images/monkey.jpg)
+![Monkey holding camera](images/monkey.jpg "I was like this monkey holding a camera backwards. But not as cute.")
 
 I didn't like not knowing how anything actually worked. It made it so hard to fix things when they broke. So, I spent years understanding how things work. I ran Arch Linux (this taught me so much). I switched to Vim full time. I configured ZSH myself. I wrote games in the terminal to see how escape codes work. I used a CLI SQL client.
 
@@ -182,9 +174,7 @@ But 10x engineers do exist.
 
 I've worked with developers who were much faster than me. Part of it was natural ability, but they'd also gotten good with their tools. I've also worked with developers who were not as fast as me.
 
-<aside>The turtle doubts there's an animal 10x faster than it.</aside>
-
-![Animals](images/animals.jpg)
+![Animals](images/animals.jpg "The turtle doubts there's an animal 10x faster than it.")
 
 What makes a 10x engineer?
 

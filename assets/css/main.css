@@ -56,15 +56,23 @@
   --ctp-mocha-base: #1e1e2e;
   --ctp-mocha-mantle: #181825;
   --ctp-mocha-crust: #11111b;
+
+  --font-size-tiny: 0.75rem;
+  --font-size-small: 1rem;
+  --font-size-regular: 1.25rem;
+  --font-size-big: 2.5rem;
 }
 
 body {
   background-color: var(--clr-body-bg);
   color: var(--clr-text);
-  margin: 0;
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 1.25rem;
   line-height: 1.5;
+  max-width: 65ch;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 
 header {
@@ -74,9 +82,30 @@ header {
 
 h1,
 h2,
-h3 {
-  color: var(--clr-heading);
+h3,
+h4 {
+  /* We don't want too much spacing on headers. */
   line-height: 1.1;
+}
+
+h1 {
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.25rem;
 }
 
 article {
@@ -84,13 +113,31 @@ article {
   max-width: 65ch;
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     text-align: center;
+    text-wrap: balance;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 2.5rem;
+    }
   }
 
   .article-meta {
     text-align: center;
     font-size: 1rem;
+  }
+}
+
+figure {
+  margin: 2rem 0;
+  img {
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  figcaption {
+    font-size: var(--font-size-small);
+    text-align: center;
+    text-wrap: balance;
   }
 }
 
@@ -105,13 +152,47 @@ img {
   overflow-x: auto;
 }
 
-code {
-  font-family: "IBM Plex Mono", monospace;
+div.highlight {
+  border-top: solid 1px var(--clr-teal);
+  border-bottom: solid 1px var(--clr-teal);
+  /* border: solid 1px var(--clr-teal); */
+
+  /* I'm being clever and pushing the scrollbar away 
+   * from the text in a way that isn't obvious when
+   * there's no scrollbar. */
+  padding-block-start: 1rem;
+
+  pre {
+    padding-block-end: 1rem;
+    margin: 0;
+
+    code {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: var(--font-size-small);
+    }
+  }
 }
 
 footer {
-  border-top: 1px solid #222;
-  margin-top: 1rem;
+  hr {
+    margin: 2rem auto;
+    height: 1px;
+    color: var(--clr-subtext);
+    background-color: var(--clr-text);
+    border: none;
+  }
+
+  .fine-print {
+    font-size: var(--font-size-small);
+    color: var(--clr-subtext);
+  }
+}
+
+blockquote {
+  margin-inline-start: 0;
+  padding-inline-start: 1rem;
+  border-left: solid 1px var(--clr-subtext);
+  color: var(--clr-subtext);
 }
 
 a {
@@ -132,22 +213,23 @@ a {
 .color-picker > fieldset {
   border: 0;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   background: var(--clr-color-picker);
   width: fit-content;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   margin-left: auto;
   margin-bottom: 2rem;
-  border-radius: 0 0 0 1rem;
+  border-radius: 0 0 1rem 1rem;
 }
 
 .color-picker input[type="radio"] {
   appearance: none;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
   outline: 3px solid var(--radio-color, currentColor);
   outline-offset: 3px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .color-picker input[type="radio"]:checked {
@@ -169,9 +251,10 @@ input[type="radio"]#tom-theme {
 :root:has(#light-theme:checked) {
   --clr-body-bg: var(--ctp-latte-base);
   --clr-text: var(--ctp-latte-text);
-  --clr-heading: var(--ctp-latte-subtext1);
+  --clr-subtext: var(--ctp-latte-subtext0);
   --clr-link: var(--ctp-latte-blue);
   --clr-color-picker: var(--ctp-latte-surface0);
+  --clr-teal: var(--ctp-latte-teal);
   color-scheme: light;
 }
 
@@ -179,9 +262,10 @@ input[type="radio"]#tom-theme {
 :root:has(#tom-theme:checked) {
   --clr-body-bg: var(--ctp-mocha-base);
   --clr-text: var(--ctp-mocha-text);
-  --clr-heading: var(--ctp-mocha-subtext1);
+  --clr-subtext: var(--ctp-mocha-subtext0);
   --clr-link: var(--ctp-mocha-blue);
   --clr-color-picker: var(--ctp-mocha-surface0);
+  --clr-teal: var(--ctp-mocha-teal);
   color-scheme: dark;
 }
 
@@ -190,14 +274,4 @@ input[type="radio"]#tom-theme {
   .display-tom {
     display: none;
   }
-}
-
-.content-2 {
-  font-size: 14px;
-  font-style: italic;
-  font-weight: 800;
-  letter-spacing: normal;
-  line-height: 33px;
-  text-transform: uppercase;
-  color: #000000;
 }
