@@ -1,5 +1,5 @@
 ---
-title: Taming the Terminal - A Podcast I Liked
+title: "Taming the Terminal: A Podcast I Liked"
 date: "2019-12-08"
 ---
 
