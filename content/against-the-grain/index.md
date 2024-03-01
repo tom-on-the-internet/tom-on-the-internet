@@ -1,6 +1,7 @@
 ---
 title: Against the Grain
 date: "2023-11-15"
+display_toc: true
 draft: false
 ---
 
@@ -53,7 +54,7 @@ r.name = r.name + "validated"
 
 This is bad because r is clearly an important variable. It lives a long time and does a lot. It deserves a longer name!
 
-## Work life balance isn't automatically a good thing for companies or even for people
+## Work life balance isn't always a good thing
 
 This is a little spicier. 🌶️
 

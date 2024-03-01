@@ -75,11 +75,6 @@ body {
   box-sizing: border-box;
 }
 
-header {
-  border-bottom: 1px solid #222;
-  margin-bottom: 1rem;
-}
-
 h1,
 h2,
 h3,
@@ -91,6 +86,7 @@ h4 {
 h1 {
   margin-top: 3.5rem;
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 h2 {
@@ -114,7 +110,7 @@ article {
 
   h1 {
     font-size: 3.5rem;
-    text-align: center;
+    /* text-align: center; */
     text-wrap: balance;
 
     @media only screen and (max-width: 768px) {
@@ -123,8 +119,7 @@ article {
   }
 
   .article-meta {
-    text-align: center;
-    font-size: 1rem;
+    font-size: var(--font-size-tiny);
   }
 }
 
@@ -183,7 +178,7 @@ footer {
   }
 
   .fine-print {
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-tiny);
     color: var(--clr-subtext);
   }
 }
@@ -200,6 +195,15 @@ a {
   color: var(--clr-link);
 }
 
+.table-of-contents-wrapper {
+  text-align: left;
+  font-size: var(--font-size-small);
+  nav ul {
+    list-style: none;
+    padding-inline-start: 0;
+  }
+}
+
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -213,8 +217,7 @@ a {
 .color-picker > fieldset {
   border: 0;
   display: flex;
-  gap: 1.5rem;
-  background: var(--clr-color-picker);
+  gap: 1rem;
   width: fit-content;
   padding: 1rem 2rem;
   margin-left: auto;
@@ -222,14 +225,13 @@ a {
   border-radius: 0 0 1rem 1rem;
 }
 
-.color-picker input[type="radio"] {
-  appearance: none;
-  width: 1rem;
-  height: 1rem;
-  outline: 3px solid var(--radio-color, currentColor);
-  outline-offset: 3px;
-  border-radius: 50%;
+.color-picker label {
+  font-size: var(--font-size-big);
   cursor: pointer;
+}
+
+.color-picker input[type="radio"] {
+  display: none;
 }
 
 .color-picker input[type="radio"]:checked {
@@ -244,10 +246,6 @@ input[type="radio"]#dark-theme {
   --radio-color: var(--ctp-mocha-base);
 }
 
-input[type="radio"]#tom-theme {
-  --radio-color: var(--ctp-mocha-mauve);
-}
-
 :root:has(#light-theme:checked) {
   --clr-body-bg: var(--ctp-latte-base);
   --clr-text: var(--ctp-latte-text);
@@ -256,10 +254,13 @@ input[type="radio"]#tom-theme {
   --clr-color-picker: var(--ctp-latte-surface0);
   --clr-teal: var(--ctp-latte-teal);
   color-scheme: light;
+  label[for="light-theme"],
+  input[type="radio"]#light-theme {
+    display: none;
+  }
 }
 
-:root:has(#dark-theme:checked),
-:root:has(#tom-theme:checked) {
+:root:has(#dark-theme:checked) {
   --clr-body-bg: var(--ctp-mocha-base);
   --clr-text: var(--ctp-mocha-text);
   --clr-subtext: var(--ctp-mocha-subtext0);
@@ -267,6 +268,11 @@ input[type="radio"]#tom-theme {
   --clr-color-picker: var(--ctp-mocha-surface0);
   --clr-teal: var(--ctp-mocha-teal);
   color-scheme: dark;
+
+  label[for="dark-theme"],
+  input[type="radio"]#dark-theme {
+    display: none;
+  }
 }
 
 :root:has(#light-theme:checked),

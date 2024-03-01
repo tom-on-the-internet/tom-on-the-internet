@@ -1,6 +1,7 @@
 ---
-title: Cemetery Escape - A terminal game
+title: "Cemetery Escape: A terminal game"
 date: "2023-11-18"
+display_toc: true
 ---
 
 [Cemetery Escape](https://github.com/tom-on-the-internet/cemetery-escape) is the most fun terminal game I've created.
@@ -9,7 +10,7 @@ You run through the cemetery, avoiding ghosts and searching tombstones for the k
 
 📹 I made a [YouTube video](https://www.youtube.com/watch?v=yZA1JmwQwYE) about the game if that's your thing.
 
-![Game Gif](images/cemetery-escape.gif)
+![Game Gif](images/cemetery-escape.gif "All in a terminal.")
 
 ## First, why don't you play the game?
 
@@ -33,9 +34,7 @@ If you prefer to download the binary, you can look in the [releases](https://git
 
 And yet, the best terminal applications make you forget you are using the terminal at all.
 
-<aside>Neovim is a terminal application that looks great.</aside>
-
-![Neovim Screenshot](images/neovim.png)
+![Neovim Screenshot](images/neovim.png "Neovim is a terminal application that looks great.")
 
 ## Overcoming the limitations
 
