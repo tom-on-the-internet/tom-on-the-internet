@@ -1,13 +1,19 @@
 <!-- Allow the user to select a color theme -->
-<form action="" class="color-picker">
-  <a href="/">⌂</a>
+<form action="" class="top-bar">
   <fieldset>
-    <legend class="visually-hidden">Pick a theme</legend>
-    <label for="light-theme"
-      >☾<input type="radio" name="theme" id="light-theme" value=""
-    /></label>
-    <label for="dark-theme"
-      >☀︎<input type="radio" name="theme" id="dark-theme" value="" checked
+    {{ if .IsHome }}
+    <!-- This is the homepage -->
+    {{ else }}
+    <a href="/">/</a>
+    {{ end }}
+    <label for="colorscheme">
+      <span class="light">☀︎</span><span class="dark">☾</span>
+      <input
+        class="visually-hidden"
+        type="checkbox"
+        name="colorscheme"
+        id="colorscheme"
+        checked
     /></label>
   </fieldset>
 </form>

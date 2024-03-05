@@ -1,7 +1,3 @@
-/**
- * Tom's CSS
- */
-
 :root {
   --ctp-latte-rosewater: #dc8a78;
   --ctp-latte-flamingo: #dd7878;
@@ -61,15 +57,49 @@
   --font-size-small: 1rem;
   --font-size-regular: 1.25rem;
   --font-size-big: 2.5rem;
+  --max-width: 65ch;
+
+  --clr-body-bg: var(--ctp-latte-base);
+  --clr-text: var(--ctp-latte-text);
+  --clr-subtext: var(--ctp-latte-subtext0);
+  --clr-link: var(--ctp-latte-blue);
+  --clr-color-picker: var(--ctp-latte-surface0);
+  --clr-teal: var(--ctp-latte-teal);
+  color-scheme: light;
+  .top-bar .dark {
+    display: none;
+  }
+}
+
+:root:has(#colorscheme:checked) {
+  --clr-body-bg: var(--ctp-mocha-base);
+  --clr-text: var(--ctp-mocha-text);
+  --clr-subtext: var(--ctp-mocha-subtext0);
+  --clr-link: var(--ctp-mocha-blue);
+  --clr-color-picker: var(--ctp-mocha-surface0);
+  --clr-teal: var(--ctp-mocha-teal);
+  color-scheme: dark;
+  .top-bar .light {
+    display: none;
+  }
+  .top-bar .dark {
+    display: inline;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   background-color: var(--clr-body-bg);
   color: var(--clr-text);
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.5;
-  max-width: 65ch;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 2rem;
   box-sizing: border-box;
@@ -84,8 +114,8 @@ h4 {
 }
 
 h1 {
-  margin-top: 3.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
   text-align: center;
 }
 
@@ -104,17 +134,26 @@ h4 {
   margin-bottom: 0.25rem;
 }
 
+p {
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+}
+
+ol {
+  list-style-position: inside;
+}
+
 article {
   margin: 0 auto;
-  max-width: 65ch;
+  max-width: var(--max-width);
 
   h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     /* text-align: center; */
     text-wrap: balance;
 
     @media only screen and (max-width: 768px) {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
   }
 
@@ -214,70 +253,28 @@ a {
   width: 1px;
 }
 
-.color-picker > fieldset {
+.top-bar > fieldset {
   border: 0;
   display: flex;
-  gap: 1rem;
-  width: fit-content;
-  padding: 1rem 2rem;
-  margin-left: auto;
+  gap: 0.5rem;
+  justify-content: flex-end;
   margin-bottom: 2rem;
-  border-radius: 0 0 1rem 1rem;
-}
+  margin-top: 2rem;
 
-.color-picker label {
-  font-size: var(--font-size-big);
-  cursor: pointer;
-}
-
-.color-picker input[type="radio"] {
-  display: none;
-}
-
-.color-picker input[type="radio"]:checked {
-  background-color: var(--radio-color);
-}
-
-input[type="radio"]#light-theme {
-  --radio-color: var(--ctp-latte-base);
-}
-
-input[type="radio"]#dark-theme {
-  --radio-color: var(--ctp-mocha-base);
-}
-
-:root:has(#light-theme:checked) {
-  --clr-body-bg: var(--ctp-latte-base);
-  --clr-text: var(--ctp-latte-text);
-  --clr-subtext: var(--ctp-latte-subtext0);
-  --clr-link: var(--ctp-latte-blue);
-  --clr-color-picker: var(--ctp-latte-surface0);
-  --clr-teal: var(--ctp-latte-teal);
-  color-scheme: light;
-  label[for="light-theme"],
-  input[type="radio"]#light-theme {
-    display: none;
+  a,
+  label {
+    color: var(--clr-text);
+    font-size: var(--font-size-regular);
+    cursor: pointer;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
-}
 
-:root:has(#dark-theme:checked) {
-  --clr-body-bg: var(--ctp-mocha-base);
-  --clr-text: var(--ctp-mocha-text);
-  --clr-subtext: var(--ctp-mocha-subtext0);
-  --clr-link: var(--ctp-mocha-blue);
-  --clr-color-picker: var(--ctp-mocha-surface0);
-  --clr-teal: var(--ctp-mocha-teal);
-  color-scheme: dark;
-
-  label[for="dark-theme"],
-  input[type="radio"]#dark-theme {
-    display: none;
+  label:has(input[type="checkbox"]:focus-visible) {
+    outline: auto 1px;
+    outline-offset: 1px;
   }
-}
 
-:root:has(#light-theme:checked),
-:root:has(#dark-theme:checked) {
-  .display-tom {
-    display: none;
+  .light {
   }
 }

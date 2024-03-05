@@ -1,6 +1,7 @@
 /**
  * color theme setting
  */
+const colorScheme = document.getElementById("colorscheme")
 
 function storeTheme(theme) {
   localStorage.setItem("theme", theme)
@@ -9,18 +10,22 @@ function storeTheme(theme) {
 function retrieveTheme() {
   const activeTheme = localStorage.getItem("theme")
   if (activeTheme === null) {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      colorScheme.checked = true
+    } else {
+      colorScheme.checked = false
+    }
     return
   }
 
-  colorThemes.forEach((el) => (el.checked = el.id === activeTheme))
+  colorScheme.checked = activeTheme === "dark"
 }
 
-const colorThemes = document.querySelectorAll('[name="theme"]')
-
-colorThemes.forEach((el) =>
-  el.addEventListener("click", () => {
-    storeTheme(el.id)
-  })
-)
+colorScheme.addEventListener("change", () => {
+  storeTheme(colorScheme.checked ? "dark" : "light")
+})
 
 retrieveTheme()
