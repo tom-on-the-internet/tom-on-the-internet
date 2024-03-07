@@ -1,11 +1,14 @@
-{{ define "main" }}
+{{ define "main" }} {{ $dateMachine := .Date | time.Format
+"2006-01-02T15:04:05-07:00" }} {{ $dateHuman := .Date | time.Format ":date_long"
+}}
 <article>
   <h1>{{ .Title }}</h1>
   <aside class="article-meta">
-    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }} {{
-    $dateHuman := .Date | time.Format ":date_long" }}
-    <time datetime="{{ $dateMachine }}"> {{ $dateHuman }}</time> — {{
-    .ReadingTime }} minute read {{ partial "table-of-contents.html" . }}
+    <div class="date-and-time">
+      <time datetime="{{ $dateMachine }}"> {{ $dateHuman }}</time> — {{
+      .ReadingTime }} minute read
+    </div>
+    {{ partial "table-of-contents.html" . }}
   </aside>
   {{ .Content}}
 </article>

@@ -5,6 +5,8 @@ display_toc: true
 draft: false
 ---
 
+## Preamble
+
 I agree with most of the thinking out there in the software developer world.
 
 I agree that CI/CD is good, that static types are useful, that code should be easy to read, and a host of other things that almost everyone agrees with.
