@@ -101,8 +101,12 @@ body {
   line-height: 1.5;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
   box-sizing: border-box;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 }
 
 h1,
@@ -137,6 +141,7 @@ h4 {
 p {
   margin-block-start: 1rem;
   margin-block-end: 1rem;
+  word-wrap: break-word;
 }
 
 ol,
@@ -145,16 +150,16 @@ ul {
 }
 
 article {
-  margin: 0 auto;
   max-width: var(--max-width);
 
   h1 {
     font-size: 3rem;
-    /* text-align: center; */
+    text-align: center;
     text-wrap: balance;
+    margin-bottom: 0.8rem;
 
     @media only screen and (max-width: 768px) {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
   }
 
@@ -162,7 +167,8 @@ article {
     font-size: var(--font-size-tiny);
 
     .date-and-time {
-      margin-bottom: 1rem;
+      text-align: center;
+      margin-bottom: 2rem;
     }
   }
 }
@@ -244,14 +250,24 @@ a {
 }
 
 .table-of-contents-wrapper {
-  text-align: left;
-  padding-inline-start: 1rem;
+  width: fit-content;
   font-size: var(--font-size-tiny);
-  border-left: solid 1px var(--clr-teal);
+  cursor: pointer;
+  color: var(--clr-teal);
+
   nav ul {
+    margin-inline-start: 3px;
     list-style: none;
     padding-inline-start: 0;
+    padding-inline-start: 1rem;
+    border-left: solid 1px var(--clr-teal);
   }
+}
+
+/* handle word `like this` in paragraphs */
+p > code {
+  color: var(--clr-teal);
+  font-family: "IBM Plex Mono", monospace;
 }
 
 .visually-hidden {
