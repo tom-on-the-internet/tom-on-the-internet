@@ -2,7 +2,7 @@
 title: Against the Grain
 date: "2023-11-15"
 display_toc: true
-draft: false
+draft: true
 ---
 
 ## Preamble

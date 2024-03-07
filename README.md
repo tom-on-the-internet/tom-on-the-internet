@@ -1,8 +1,5 @@
 # Tom on the Internet
 
-This will be my new digital home.
+Welcome to my GitHub home!
 
-## Todo
-
-- analytics
-- projects page
+My name is Tom Steven. You are welcome here.

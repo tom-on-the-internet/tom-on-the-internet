@@ -286,3 +286,9 @@ a {
     outline-offset: 1px;
   }
 }
+
+.temp-home {
+  ul {
+    font-size: var(--font-size-small);
+  }
+}

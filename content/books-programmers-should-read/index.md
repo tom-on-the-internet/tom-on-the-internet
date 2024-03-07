@@ -1,6 +1,7 @@
 ---
 title: Books Programmers Should Read
 date: "2024-02-22"
+draft: true
 ---
 
 - the Goal
