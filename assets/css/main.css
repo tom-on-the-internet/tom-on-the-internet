@@ -270,30 +270,67 @@ a {
     border: solid 2px var(--clr-sapphire);
     border-radius: 5%;
 
-    animation: bobbing 25s ease-in-out infinite; /* adjust duration as needed */
+    animation: bobbing 25s 10s ease-in-out infinite; /* adjust duration as needed */
     svg {
       display: block;
       margin: auto;
       filter: var(--clr-filter-teal);
     }
   }
+
+  .wave {
+    transform-origin: bottom;
+    animation: wave 14s infinite;
+    transform-origin: 75% 75%;
+    display: inline-block;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  88% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(16deg);
+  }
+  92% {
+    transform: rotate(-6deg);
+  }
+  94% {
+    transform: rotate(16deg);
+  }
+  96% {
+    transform: rotate(-4deg);
+  }
+  98% {
+    transform: rotate(16deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @keyframes bobbing {
   0% {
-    transform: translateY(1rem) translateX(0px) rotate(5deg);
+    transform: translateY(0rem) translateX(0px) rotate(0deg);
+  }
+  13% {
+    transform: translateY(-1rem) translateX(-100px) rotate(5deg);
   }
   25% {
-    transform: translateY(0rem) translateX(-200px) rotate(-20deg);
+    transform: translateY(1rem) translateX(-200px) rotate(-20deg);
   }
   50% {
     transform: translateY(-1rem) translateX(0px) rotate(0deg);
   }
   75% {
-    transform: translateY(0rem) translateX(200px) rotate(380deg);
+    transform: translateY(1rem) translateX(200px) rotate(380deg);
   }
   100% {
-    transform: translateY(1rem) translateX(0px) rotate(5deg);
+    transform: translateY(0rem) translateX(0px) rotate(0deg);
   }
 }
 
