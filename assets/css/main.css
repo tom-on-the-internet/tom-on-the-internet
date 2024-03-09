@@ -320,6 +320,7 @@ a {
 
   ul {
     list-style: none;
+    font-size: var(--font-size-small);
   }
 }
 
