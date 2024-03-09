@@ -70,6 +70,7 @@
   --clr-color-picker: var(--ctp-latte-surface0);
   --clr-teal: var(--ctp-latte-teal);
   --clr-sapphire: var(--ctp-latte-sapphire);
+  --clr-surface: var(--ctp-latte-surface);
   --clr-filter-teal: var(--ctp-latte-filter-teal);
   color-scheme: light;
   .top-bar .dark {
@@ -85,6 +86,7 @@
   --clr-color-picker: var(--ctp-mocha-surface0);
   --clr-teal: var(--ctp-mocha-teal);
   --clr-sapphire: var(--ctp-mocha-sapphire);
+  --clr-surface: var(--ctp-mocha-surface);
   --clr-filter-teal: var(--ctp-mocha-filter-teal);
   color-scheme: dark;
   .top-bar .light {
@@ -164,7 +166,6 @@ article {
     font-size: 3rem;
     text-align: center;
     text-wrap: balance;
-    margin-bottom: 0.8rem;
 
     @media only screen and (max-width: 768px) {
       font-size: 2.5rem;
@@ -179,6 +180,15 @@ article {
       margin-bottom: 2rem;
     }
   }
+}
+
+article.single {
+  h1 {
+    margin-bottom: 0.8rem;
+  }
+}
+article.timeless {
+  margin-block-end: 5rem;
 }
 
 figure {
@@ -270,8 +280,8 @@ a {
     padding: 1rem;
     border: solid 2px var(--clr-sapphire);
     border-radius: 5%;
-
     animation: bobbing 25s 10s ease-in-out infinite; /* adjust duration as needed */
+
     svg {
       display: block;
       margin: auto;
@@ -280,6 +290,7 @@ a {
   }
 
   .greeting {
+    margin-top: 4rem;
     font-size: var(--font-size-big);
     code {
       span {
