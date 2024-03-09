@@ -273,8 +273,11 @@ a {
 
   h1 {
     font-size: var(--font-size-regular);
-    color: var(--clr-subtext);
+    color: var(--clr-teal);
+    text-transform: uppercase;
     margin-bottom: 4rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
   }
 
   .home-logo {
@@ -321,6 +324,14 @@ a {
   ul {
     list-style: none;
     font-size: var(--font-size-small);
+  }
+
+  .welcome-message {
+    p {
+      /* text-align: justify; */
+      /* text-align-last: justify; */
+      /* text-wrap: balance; */
+    }
   }
 }
 

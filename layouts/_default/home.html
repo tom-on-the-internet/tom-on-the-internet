@@ -9,14 +9,13 @@
       ><span>K</span></code
     >
   </p>
-  <p class="blurb">
-    Thank god you're finally here! I didn't think you'd make it.
-  </p>
-  <p>
-    Look, we don't have a lot of time. Take some time and learn
-    <a href="/about">about me</a>. Once that's done, read some blog posts.
-  </p>
-
+  <div class="welcome-message">
+    <p>Thank god you're finally here! I didn't think you'd make it.</p>
+    <p>
+      Look, we don't have a lot of time. Take some time and learn
+      <a href="/about">about me</a>. Once that's done, read some blog posts.
+    </p>
+  </div>
   <h2>Blog posts</h2>
   <ul>
     {{ range (.Paginate .Site.RegularPages).Pages }} {{ if ne .RelPermalink
