@@ -263,6 +263,7 @@ a {
     color: var(--clr-subtext);
     margin-bottom: 4rem;
   }
+
   .home-logo {
     margin: 3rem auto;
     width: 100px;
@@ -278,38 +279,53 @@ a {
     }
   }
 
-  .wave {
-    transform-origin: bottom;
-    animation: wave 14s infinite;
-    transform-origin: 75% 75%;
-    display: inline-block;
+  .greeting {
+    font-size: var(--font-size-big);
+    code {
+      span {
+        display: inline-block;
+      }
+      span:nth-child(1) {
+        animation: bounce 1s 15s cubic-bezier(0.28, 0.84, 0.42, 1) infinite; /* adjust duration as needed */
+      }
+      span:nth-child(2) {
+        animation: bounce 2.3s 15.4s cubic-bezier(0.28, 0.84, 0.42, 1) infinite; /* adjust duration as needed */
+      }
+      span:nth-child(3) {
+        animation: bounce 1.3s 16.1s cubic-bezier(0.28, 0.84, 0.42, 1) infinite; /* adjust duration as needed */
+      }
+      span:nth-child(4) {
+        margin-left: 1ch;
+        animation: bounce 1.7s 17.7s cubic-bezier(0.28, 0.84, 0.42, 1) infinite; /* adjust duration as needed */
+      }
+      span:nth-child(5) {
+        animation: bounce 3.2s 18.6s cubic-bezier(0.28, 0.84, 0.42, 1) infinite; /* adjust duration as needed */
+      }
+    }
   }
 }
 
-@keyframes wave {
+@keyframes bounce {
   0% {
-    transform: rotate(0deg);
+    transform: scale(1, 1) translateY(0);
   }
-  88% {
-    transform: rotate(0deg);
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
   }
-  90% {
-    transform: rotate(16deg);
+  30% {
+    transform: scale(0.9, 1.1) translateY(-50px);
   }
-  92% {
-    transform: rotate(-6deg);
+  50% {
+    transform: scale(1.05, 0.95) translateY(0);
   }
-  94% {
-    transform: rotate(16deg);
+  57% {
+    transform: scale(1, 1) translateY(-7px);
   }
-  96% {
-    transform: rotate(-4deg);
-  }
-  98% {
-    transform: rotate(16deg);
+  64% {
+    transform: scale(1, 1) translateY(0);
   }
   100% {
-    transform: rotate(0deg);
+    transform: scale(1, 1) translateY(0);
   }
 }
 
@@ -337,7 +353,7 @@ a {
 @media only screen and (max-width: 768px) {
   @keyframes bobbing {
     0% {
-      transform: translateY(0) translateX(0px) rotate(5deg);
+      transform: translateY(0) translateX(0px) rotate(0deg);
     }
     25% {
       transform: translateY(-1rem) translateX(-100px) rotate(-20deg);
@@ -349,7 +365,7 @@ a {
       transform: translateY(-1rem) translateX(100px) rotate(380deg);
     }
     100% {
-      transform: translateY(0) translateX(0px) rotate(5deg);
+      transform: translateY(0) translateX(0px) rotate(0deg);
     }
   }
 }
