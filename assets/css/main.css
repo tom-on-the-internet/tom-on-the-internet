@@ -187,6 +187,7 @@ article.single {
     margin-bottom: 0.8rem;
   }
 }
+
 article.timeless {
   margin-block-end: 5rem;
 }
@@ -268,6 +269,8 @@ a {
 }
 
 .home {
+  margin-block-end: 5rem;
+
   h1 {
     font-size: var(--font-size-regular);
     color: var(--clr-subtext);
@@ -313,6 +316,10 @@ a {
         animation: bounce 3.2s 18.6s cubic-bezier(0.28, 0.84, 0.42, 1) infinite; /* adjust duration as needed */
       }
     }
+  }
+
+  ul {
+    list-style: none;
   }
 }
 
@@ -431,12 +438,5 @@ p > code {
   label:has(input[type="checkbox"]:focus-visible) {
     outline: auto 1px;
     outline-offset: 1px;
-  }
-}
-
-.temp-home {
-  font-size: var(--font-size-tiny);
-  ul {
-    list-style: none;
   }
 }
