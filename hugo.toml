@@ -9,3 +9,5 @@ title = 'Tom on the Internet'
     startLevel = 2
   [markup.goldmark.renderer]
       unsafe = true
+  [security]
+     enableInlineShortcodes = true

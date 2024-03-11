@@ -269,8 +269,6 @@ a {
 }
 
 .home {
-  margin-block-end: 5rem;
-
   h1 {
     font-size: var(--font-size-regular);
     color: var(--clr-teal);
@@ -297,6 +295,7 @@ a {
 
   .greeting {
     margin-top: 4rem;
+    margin-bottom: 2rem;
     font-size: var(--font-size-big);
     code {
       span {
@@ -326,11 +325,18 @@ a {
     font-size: var(--font-size-small);
   }
 
-  .welcome-message {
-    p {
-      /* text-align: justify; */
-      /* text-align-last: justify; */
-      /* text-wrap: balance; */
+  .blog-list {
+    line-height: 1.4;
+
+    a {
+      display: block;
+    }
+
+    time {
+      display: block;
+      font-size: var(--font-size-tiny);
+      color: var(--clr-subtext);
+      margin-bottom: 1rem;
     }
   }
 }
