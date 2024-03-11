@@ -1,7 +1,9 @@
 ---
 title: About Tom
-layout: timeless
+display_toc: true
 ---
+
+## wow
 
 I'm a programmer, father, husband... look, I'll be honest. I find writing about myself pretty difficult. You ever try to look inside and not find anything?
 
