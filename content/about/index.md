@@ -5,7 +5,11 @@ display_toc: true
 
 ## Professional
 
-I'm a programmer.
+I'm a senior, fullstack programmer living in St. Catharines, Ontario, Canada. I work primarily with the web. I work on anything from html and css, to PHP and Go, to Bash scripts and Terraform.
+
+I have experience leading developers, working solo, collaborating across teams... you name it.
+
+Feel free to reach out if you have any questions. My email address is <a href="mailto:tom@tomontheinternet.com">tom@tomontheinternet.com</a>.
 
 ## Personal
 
@@ -19,10 +23,10 @@ I'm interested in people; who they are and how they think. I'm interested in com
 
 I can speak Korean, a little bit. 한국어를 할 수 있습니까?
 
-## tomontheinternet.com
+## tomontheinternet.com (this website)
 
-wow
+This site was built by me. I'm using [Hugo](https://gohugo.io/) as the static site generator. The design and theme are all me, for better or worse.
 
-I try hard.
+## About you
 
-<a href="mailto:someone@yoursite.com">email me</a>
+coming soon
