@@ -414,6 +414,10 @@ a {
   }
 }
 
+.not-found-page {
+  text-align: center;
+}
+
 /* handle word `like this` in paragraphs */
 p > code {
   color: var(--clr-teal);
