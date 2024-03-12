@@ -297,7 +297,7 @@ a {
     text-align: center;
     margin-top: 4rem;
     margin-bottom: 2rem;
-    font-size: var(--font-size-big);
+    font-size: var(--font-size-regular);
     code {
       span {
         display: inline-block;
