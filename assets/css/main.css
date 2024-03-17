@@ -186,6 +186,12 @@ article.single {
   h1 {
     margin-bottom: 0.8rem;
   }
+
+  &.dateless {
+    h1 {
+      margin-bottom: 2rem;
+    }
+  }
 }
 
 article.timeless {

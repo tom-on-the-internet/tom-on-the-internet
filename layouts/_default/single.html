@@ -1,5 +1,18 @@
 {{ define "main" }}
-<article class="single">
+<article
+  {{
+  if
+  .Date
+  }}
+  class="single"
+  {{
+  else
+  }}
+  class="single dateless"
+  {{
+  end
+  }}
+>
   <h1>{{ .Title }}</h1>
   <aside class="article-meta">
     {{ if .Date }}
