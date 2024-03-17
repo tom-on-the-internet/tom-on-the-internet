@@ -324,6 +324,12 @@ a {
   ul {
     list-style: none;
     font-size: var(--font-size-small);
+
+    &.pages {
+      li {
+        margin-bottom: 1rem;
+      }
+    }
   }
 
   .blog-list {
