@@ -1,4 +1,0 @@
-# TODO
-
-- tags
-- home page
