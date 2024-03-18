@@ -1,3 +1,15 @@
-# Tom on the Internet
+```diff
++                                                        +
++   ████████ █  Hello!                                   +
++   █        █                                           +
++   ██████████  My name is Tom!                          +
++   █        █                                           +
++   ████████ █  And YOU are visiting my Github Profile.  +
++            █                                           +
++   ██████████  My GitHub profile is GREEN!              +
++   █        █                                           +
++   ██████████                                           +
++                                                        +
+```
 
-This is my home page.
+Ok ok ok... come find me at [tomontheinternet.com](https://tomontheinternet.com)
